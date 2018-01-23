@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Functions</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		  <a class="navbar-brand" href="#">Functions</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		    <ul class="navbar-nav mr-auto">
+		      <li class="nav-item">
+		        <a class="nav-link" href="ctof.html">One</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="larger.html">Two</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="sortthree.html">Three</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="largest.html">Four</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="oddeven.html">Five</a>
+		      </li>
+		      <li class="nav-item active">
+		        <a class="nav-link" href="month.html">Six</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="fifty.html">Seven</a>
+		      </li>
+		    </ul>
+		  </div>
+		</nav>
+	<div class="container-fluid text-center" style="padding-top: 50px;">
+		<div class="row">
+		  <div class="col-6 col-md-4"></div>
+		  <div class="col-6 col-md-4">
+		  	<div id="problem1">
+				<h2>Month Numberizer</h2>
+				  <input type="text" class="form-control" placeholder="Month" aria-label="Number" id="num1" style="font-size: 30px;">
+				  <button type="button" class="btn btn-primary btn-lg btn-block" onclick="solve();">Numberize</button>
+				<div class="alert alert-warning alert-dismissible fade" role="alert" id="resultcon">
+				  <span id="result" style="font-size: 30px;"></span>
+				  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				    <span aria-hidden="true">&times;</span>
+				  </button>
+				</div>
+			</div>
+		  </div>
+		  <div class="col-6 col-md-4"></div>
+		</div>
+	</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script type="text/javascript">
+	function month(num) {
+		num = num.toLowerCase();
+		if(num=="january") {
+			return "01";
+		}
+		if(num=="february") {
+			return "02";
+		}
+		if(num=="march") {
+			return "03";
+		}
+		if(num=="april") {
+			return "04";
+		}
+		if(num=="may") {
+			return "05";
+		}
+		if(num=="june") {
+			return "06";
+		}
+		if(num=="july") {
+			return "07";
+		}
+		if(num=="august") {
+			return "08";
+		}
+		if(num=="september") {
+			return "09";
+		}
+		if(num=="october") {
+			return "10";
+		}
+		if(num=="november") {
+			return "11";
+		}
+		if(num=="december") {
+			return "12";
+		}
+		return "Error";
+	}
+	function solve() {
+		var num = document.querySelector('#num1').value;
+		document.querySelector('#result').innerHTML = month(num);
+		document.querySelector('#resultcon').className += " show";
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Functions</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		  <a class="navbar-brand" href="#">Functions</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		    <ul class="navbar-nav mr-auto">
+		      <li class="nav-item">
+		        <a class="nav-link" href="ctof.html">One</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="larger.html">Two</a>
+		      </li>
+		      <li class="nav-item active">
+		        <a class="nav-link" href="sortthree.html">Three</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="largest.html">Four</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="oddeven.html">Five</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="month.html">Six</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="fifty.html">Seven</a>
+		      </li>
+		    </ul>
+		  </div>
+		</nav>
+	<div class="container-fluid text-center" style="padding-top: 50px;">
+		<div class="row">
+		  <div class="col-6 col-md-4"></div>
+		  <div class="col-6 col-md-4">
+		  	<div id="problem1">
+				<h2>Sort Three Numbers</h2>
+				  <input type="text" class="form-control" placeholder="First Number" aria-label="First Number" id="num1" style="font-size: 30px;">
+				  <input type="text" class="form-control" placeholder="Second Number" aria-label="Second Number" id="num2" style="font-size: 30px;">
+				  <input type="text" class="form-control" placeholder="Third Number" aria-label="Third Number" id="num3" style="font-size: 30px;">
+				  <button type="button" class="btn btn-primary btn-lg btn-block" onclick="solve();">Sort</button>
+				<div class="alert alert-warning alert-dismissible fade" role="alert" id="resultcon">
+				  <span id="result" style="font-size: 30px;"></span>
+				  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				    <span aria-hidden="true">&times;</span>
+				  </button>
+				</div>
+			</div>
+		  </div>
+		  <div class="col-6 col-md-4"></div>
+		</div>
+	</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script type="text/javascript">
+	function sort(n1,n2,n3) {
+		var high, mid, low;
+		if(n3>=n2) {
+			mid = n3;
+			low = n2;
+			n1 = n1;
+			n2 = mid;
+			n3 = low;
+		}
+		if(n2>=n1) {
+			high = n2;
+			mid = n1;
+			n1 = high;
+			n2 = mid;
+			n3 = n3;
+		}
+		if(n3>=n2) {
+			mid = n3;
+			low = n2;
+			n1 = n1;
+			n2 = mid;
+			n3 = low;
+		}
+		if(n2>=n1) {
+			high = n2;
+			mid = n1;
+			n1 = high;
+			n2 = mid;
+			n3 = n3;
+		}
+		return n1 + ", " +n2 + ", " + n3;
+	}
+
+	function solve() {
+		var n1 = document.querySelector('#num1').value;
+		var n2 = document.querySelector('#num2').value;
+		var n3 = document.querySelector('#num3').value;
+		document.querySelector('#result').innerHTML = sort(n1,n2,n3);
+		document.querySelector('#resultcon').className += " show";
+	}
+</script>
+</body>
+</html>
